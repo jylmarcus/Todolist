@@ -10,9 +10,77 @@
 </head>
 <body>
     <div id="content">
-        <header>Todolist</header>
-        <aside>Project</aside>
-        <main>Todo goes here</main>
+        <header><h1>Todolist</h1></header>
+        <aside>
+            <p>Inbox</p>
+            <p>Today</p>
+            <p>Upcoming</p>
+            <section>
+                <h2>Projects</h2>
+                <div class="projectContainer"></div>
+                <button class= "addProject" type="button">
+                    <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" />
+                    </svg> 
+                    <h3>Add project</h3></button>
+            </section>
+        </aside>
+        <main>
+            <h2>Inbox</h2>
+            <div class="taskContainer">
+                <div class="task">
+                    <div class="checkBox">
+                        <svg width="24" height="24">
+                            <path fill="currentColor" d="M11.23 13.7l-2.15-2a.55.55 0 0 0-.74-.01l.03-.03a.46.46 0 0 0 0 .68L11.24 15l5.4-5.01a.45.45 0 0 0 0-.68l.02.03a.55.55 0 0 0-.73 0l-4.7 4.35z"></path>
+                        </svg>
+                    </div>
+                    <div class="taskContent">
+                        <div class="taskTitle">
+                            Complete Todolist
+                        </div>
+                        <div class="taskDesc">
+                            Use pubsub design pattern
+                        </div>
+                    </div>
+                    <div class="taskActions">
+                        <div class="editTask">
+                            <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                                <path fill="currentColor" d="M14.06,9L15,9.94L5.92,19H5V18.08L14.06,9M17.66,3C17.41,3 17.15,3.1 16.96,3.29L15.13,5.12L18.88,8.87L20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18.17,3.09 17.92,3 17.66,3M14.06,6.19L3,17.25V21H6.75L17.81,9.94L14.06,6.19Z" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="addTask">
+                <button class="addTaskButton" type="button">
+                    <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" /></svg>
+                    <h3>Add task</h3>
+                </button>
+                <div class="addTaskPopup">
+                    <form action="#" onsubmit="onSubmit();return false" id="addTaskForm" class="addTaskForm">
+                        <input type="text" id="taskTitle" name="taskTitle" placeholder="Task title">
+                        <textarea name="taskDesc" id="taskDesc" placeholder="Task description"></textarea>
+                        <div class="addTaskFormActions">
+                            <div class="addTaskFormActionPills">
+                                <input type="date" id="dueDate" name="dueDate" class="addTaskFormActionPill" placeholder="Due    Date">
+                                <select id="taskLocation" name="taskLocation" class="addTaskFormActionPill" aria-label="taskLocation">
+                                    <option value="inbox">Inbox</option>
+                                    <option value="today">Today</option>
+                                </select>
+                            </div>
+                            <div class="addTaskFormExtraActions">
+                                <p class="addTaskFormExtraAction">Flag</p>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="addTaskFormButtons">
+                        <button type="button" data-close-button class="closeAddTask">Cancel</button>
+                        <button class="submit" type="submit" form="addTaskForm" value="Submit">Add Task</button>
+                    </div>
+                </div>
+            </div>
+        </main>
     </div>
 </body>
 </html>
